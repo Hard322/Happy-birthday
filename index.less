@@ -26,3 +26,101 @@ ul,li {
 		background: yellow;
 	}
 }
+.a_background {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+.a_background_top {
+	width: 100%;
+	height: 71.6%;
+	background: url(images/background/a_background_top.png) no-repeat;
+	background-size: 100% 100%;
+}
+.a_background_middle{
+    width: 100%;
+    height: 13.1%;
+    background-image: url(images/background/a_background_middle.png);
+    background-size: 100% 100%;
+}
+
+.a_background_botton{
+    width: 100%;
+    height: 15.3%;
+    background-image: url(images/background/a_background_botton.png);
+    background-size: 100% 100%;
+}
+.b_background {
+	.a_background;
+	background: url(images/QixiB-bright.png) no-repeat;
+	background-size: 100% 100%;
+}
+.c_background {
+	.a_background;
+	background: url(images/QixiC.png) no-repeat;
+	background-size: 100% 100%;
+}
+//男孩
+.charector {
+    width: 151px;
+    height: 291px;
+    background: url(http://img.mukewang.com/55ade248000198ae10550582.png) -0px -291px no-repeat;
+    position: absolute;
+    z-index: 10;
+    top:0;
+    left:0;
+}
+//行走动作
+.allanimation(@name,@duration,@function,@count){
+	animation-name: @name;
+	animation-durantion: @duration;
+	animation-time-function: @function;
+	animation-iteration-count:@count;
+	-webkit-animation-name: @name;
+	-webkit-animation-durantion: @duration;
+	-webkit-animation-time-function: @function;
+	-webkit-animation-iteration-count:@count;
+	-moz-animation-name: @name;
+	-moz-animation-durantion: @duration;
+	-moz-animation-time-function: @function;
+	-moz-animation-iteration-count:@count;
+	
+}
+.slowwalk {
+	.allanimation(walk,950ms,steps(1,start),infinite)
+}
+@-webkit-keyframes walk {
+        0% {
+            background-position: -0px -291px;
+        }
+        25% {
+            background-position: -602px -0px;
+        }
+        50% {
+            background-position: -302px -291px;
+        }
+        75% {
+            background-position: -151px -291px;
+        }
+        100% {
+            background-position: -0px -291px;
+        }
+    }
+    
+    @-moz-keyframes walk {
+        0% {
+            background-position: -0px -291px;
+        }
+        25% {
+            background-position: -602px -0px;
+        }
+        50% {
+            background-position: -302px -291px;
+        }
+        75% {
+            background-position: -151px -291px;
+        }
+        100% {
+            background-position: -0px -291px;
+        }
+    }
