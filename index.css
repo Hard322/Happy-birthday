@@ -54,6 +54,13 @@ li {
   width: 100%;
   height: 100%;
   position: absolute;
+  background: url(images/QixiB-dark.png) no-repeat;
+  background-size: 100% 100%;
+}
+.b_background_preload {
+  width: 100%;
+  height: 100%;
+  position: absolute;
   background: url(images/QixiB-bright.png) no-repeat;
   background-size: 100% 100%;
 }
@@ -67,7 +74,7 @@ li {
 .charector {
   width: 151px;
   height: 291px;
-  background: url(http://img.mukewang.com/55ade248000198ae10550582.png) 0px -291px no-repeat;
+  background: url(images/boy.png) 0px -291px no-repeat;
   position: absolute;
   z-index: 10;
   top: 0;
@@ -119,5 +126,301 @@ li {
   }
   100% {
     background-position: 0px -291px;
+  }
+}
+.walkpause {
+  animation-play-state: paused;
+}
+#sun {
+  background: url("images/sun.png") no-repeat;
+  position: absolute;
+  z-index: 1;
+  top: -15%;
+  height: 201px;
+  width: 201px;
+  right: 40%;
+}
+.rotation {
+  -webkit-animation-name: rotation;
+  -webkit-animation-duration: 30s;
+  -moz-animation-name: rotation;
+  -moz-animation-duration: 30s;
+}
+@-webkit-keyframes rotation {
+  /*？*/
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(-2000px) translateY(400px);
+  }
+}
+@-moz-keyframes rotation {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(-2000px) translateY(400px);
+  }
+}
+.cloud {
+  z-index: 2;
+  position: absolute;
+}
+.cloud1 {
+  width: 181px;
+  height: 101px;
+  left: -5%;
+  top: 15%;
+  background: url("images/cloud1.png");
+  animation-name: cloudmove;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: cloudmove;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: cloudmove;
+  -moz-animation-duration: 20s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+}
+.cloud2 {
+  width: 301px;
+  height: 140px;
+  right: -5%;
+  background: url("images/cloud2.png");
+  animation-name: cloudmove2;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: cloudmove2;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: cloudmove2;
+  -moz-animation-duration: 20s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+}
+@-webkit-keyframes cloudmove {
+  0% {
+    left: -5%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@-moz-keyframes cloudmove {
+  0% {
+    left: -5%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@-webkit-keyframes cloudmove2 {
+  0% {
+    rgiht: -5%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+@-moz-keyframes cloudmove2 {
+  0% {
+    right: -5%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+.shop {
+  width: 39.5%;
+  height: 35.5%;
+  position: absolute;
+  left: 29%;
+  top: 36.5%;
+}
+.door {
+  position: absolute;
+  width: 32%;
+  height: 100%;
+  top: 32%;
+  height: 68%;
+  overflow: hidden;
+  left: 58.5%;
+}
+.eachdoor {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+}
+.leftdoor {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  background: url(images/door-left.png);
+  background-size: 100% 100%;
+}
+.rightdoor {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  background: url(images/door-right.png);
+  background-size: 100% 100%;
+}
+.slowFlowerWalk {
+  -webkit-animation-name: person-flower-slow;
+  -webkit-animation-duration: 950ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: step-start;
+  -moz-animation-name: person-flower-slow;
+  -moz-animation-duration: 950ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: step-start;
+}
+@-webkit-keyframes person-flower-slow {
+  0% {
+    background-position: -453px 0px;
+  }
+  25% {
+    background-position: -904px 0px;
+  }
+  50% {
+    background-position: -451px 0px;
+  }
+  75% {
+    background-position: -753px 0px;
+  }
+  100% {
+    background-position: -300px 0px;
+  }
+}
+@-moz-keyframes person-flower-slow {
+  0% {
+    background-position: -453px 0px;
+  }
+  25% {
+    background-position: -904px 0px;
+  }
+  50% {
+    background-position: -451px 0px;
+  }
+  75% {
+    background-position: -753px 0px;
+  }
+  100% {
+    background-position: -300px 0px;
+  }
+}
+.girl {
+  background: url(images/girl.png) -755px 0px no-repeat;
+  position: absolute;
+  right: 40%;
+  top: 37%;
+  width: 151px;
+  height: 291px;
+}
+.hbtext {
+  position: fixed;
+  top: 30%;
+  left:30%;
+  display: none;
+  font-size: 5em;
+  z-index: 1000;
+}
+.logolightSpeedIn {
+  display: block;
+  -webkit-animation-name: lightSpeedIn;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-duration: 3s;
+  -moz-animation-name: lightSpeedIn;
+  -moz-animation-timing-function: ease-out;
+  -moz-animation-duration: 3s;
+}
+@-webkit-keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0.2;
+  }
+  60% {
+    -webkit-transform: skewX(20deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: skewX(-5deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: none;
+    opacity: 1;
+  }
+}
+@-moz-keyframes lightSpeedIn {
+  0% {
+    -moz-transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+  60% {
+    -moz-transform: skewX(20deg);
+    opacity: 1;
+  }
+  80% {
+    -moz-transform: skewX(-5deg);
+    opacity: 1;
+  }
+  100% {
+    -moz-transform: none;
+    opacity: 1;
+  }
+}
+.logoshake {
+  -webkit-animation-name: logoshake;
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-name: logoshake;
+  -moz-animation-duration: 0.5s;
+}
+@-webkit-keyframes logoshake {
+  /* 补充代码使logo产生左右晃动效果 */
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+  }
+}
+@-moz-keyframes logoshake {
+  /* 补充代码使logo产生左右晃动效果 */
+  0%,
+  100% {
+    -moz-transform: translate3d(0, 0, 0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -moz-transform: translate3d(-5px, 0, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -moz-transform: translate3d(10px, 0, 0);
   }
 }
