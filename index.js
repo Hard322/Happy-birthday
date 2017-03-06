@@ -1,12 +1,6 @@
-//背景图滑动
+
+//全局变量
 var distance,girltop,girlleft;
-var animationEnd = (function() {
-           var explorer = navigator.userAgent;
-           if (~explorer.indexOf('WebKit')) {
-               return 'webkitAnimationEnd';
-           }
-           return 'animationend';
-       })();
 var flower=[
 	'images/snowflake/snowflake1.png',
 	'images/snowflake/snowflake2.png',
@@ -14,11 +8,21 @@ var flower=[
 	'images/snowflake/snowflake4.png',
 	'images/snowflake/snowflake5.png',
 	'images/snowflake/snowflake6.png',];
+//动画结束监测
+var animationEnd = (function() {
+           var explorer = navigator.userAgent;
+           if (~explorer.indexOf('WebKit')) {
+               return 'webkitAnimationEnd';
+           }
+           return 'animationend';
+       })();
+//背景图滑动
 function swipe(container){
 	var contentWrap=container.find(":first"),
 		eachBg=contentWrap.find("li"),
 		containerWidth=container.width(),
 		containerHeight=container.height();
+		console.log(containerWidth,containerHeight);
 	contentWrap.css({
 		"width":containerWidth*3+'px',
 		"height":containerHeight+'px'
@@ -157,11 +161,38 @@ function walkoutshop(time){
 	});
 	return dtd;	
 }
+//花瓣飘落动画
+function setflowers(){
+	var topleft=parseInt(Math.random()*$(".flowerdown").width(),10)-50,
+		downleft=parseInt(Math.random()*$(".flowerdown").width(),10)-50,
+		url=flower[Math.floor(Math.random()*6)],
+		dur=Math.floor(Math.random()*10000),
+		duration=(dur<5000)?10000:dur,
+		opa=Math.random(),
+		opafinal=(opa<0.5)?1:opa;
+	var $newflower=$("<div class='eachflower'></div>").css({
+		"background":"url("+url+")",
+		"left":topleft,
+		"opacity":opafinal
+	});
+	$(".flowerdown").append($newflower);
+	$newflower.transition({
+		"top":$(".flowerdown").height()-50+'px',
+		"left":downleft,
+		opacity:0.7
+	},duration,"ease-out",function(){
+		$(this).remove();
+	});
+}
 $(function(){
 	swipe($("#container"));
+	
 	setposition();
 	var boy=boywalk();
 	var swipebg=swipe($("#container")),swipebgdistance=$("#container").width()*1;
+	var audio=new Audio("http://m2.music.126.net/sSscv7oylNDJAzwRdkdV6A==/18620229416637724.mp3");
+	audio.loop=false;
+	audio.play();
 	boy.walkto(2000,0.5)
 		.then(function(){
 			return swipebg.scrollTo(-swipebgdistance,5000);
@@ -202,5 +233,6 @@ $(function(){
                 .on(animationEnd, function() {
                     $(".hbtext").addClass('logoshake').off();
                  });
+            setInterval('setflowers()',200);
 		});
 });
